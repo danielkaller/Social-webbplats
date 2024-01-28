@@ -1,0 +1,13 @@
+.read-message {
+    opacity: 0.6;
+    /* 60% opacity for read messages */
+}
+
+.unread-message {
+    opacity: 1;
+    /* Full opacity for unread messages */
+}
+
+p {
+    word-wrap: break-word;
+}

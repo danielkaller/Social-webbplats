@@ -1,0 +1,15 @@
+#text {
+    margin-right: 5px;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+#buttonDiv {
+    margin-left: 5px;
+}
+
+.read {
+    opacity: 50%;
+}

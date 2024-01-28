@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+<body>
+    <h1><%= post.sender %></h1>
+    <p><%= post.message %></p>
+    <form id="mark-as-read" action="/messages/<%= post._id %>" method="PATCH">
+        <button type="submit">mark as read</button>
+    </form>
+
+    <script>
+        document.getElementById('mark-as-read').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const id = "<%= post._id %>";
+            console.log(id)
+            fetch(`/messages/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({read: true})
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === 'success') {
+                    window.location.href = '/messages'
+                }
+            })
+            .catch((err) => {
+                alert(err)
+            });
+        });
+    </script>
+</body>
+</html>
