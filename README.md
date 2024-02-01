@@ -3,6 +3,7 @@ This is a web platform where you can chat with other people. There is a global r
 
 
 Back-end: NODEJS and MongoDB. Also uses CORS and AJAX
+
 Front-end: React
 
 ### Installation
